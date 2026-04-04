@@ -20,50 +20,72 @@ function divide(a, b) {
     return b === 0 ? "Cannot divide by zero" : a / b;
 }
 
-app.get('/add', (req, res) => {
-    const { a, b } = req.query;
+function power(a, b) {
+    return a ** b;
+}
 
-    const result = add(Number(a), Number(b));
+function sqrt(a) {
+    return Math.sqrt(a);
+}
+
+function modulus(a, b) {
+    return a % b;
+}
+
+app.get('/calculate', (req, res) => {
+    const { op, a, b } = req.query;
+
+    if (!op) {
+        return res.status(400).json({
+            message: "Operation (op) is required"
+        });
+    }
+
+    const numA = Number(a);
+    const numB = Number(b);
+
+    let result;
+
+    switch (op) {
+        case 'add':
+            if (!a || !b) return res.status(400).json({ message: "a and b required"})
+            result = add(numA, numB);
+            break;
+        case 'sub':
+            result = subtract(numA, numB);
+            break;
+        case 'mul': 
+            result = multiply(numA, numB);
+            break;
+        case 'div':
+            result = divide(numA, numB);
+            break;
+        case 'pow':
+            if (!a || !b) return res.status(400).json({ message: "a and b required"})
+            result = power(numA, numB);
+            break;
+        case 'mod':
+            if (!a || !b) return res.status(400).json({ message: "a and b required"})
+            result = modulus(numA, numB);
+            break;
+        case 'sqrt':
+             if (!a) return res.status(400).json({ message: "a and b required"})
+            result = sqrt(numA);
+            break;
+
+        default:
+            return res.status(400).json({
+                message: "Invalid operation"
+            });
+    }
 
     res.json({
-        operation: "addition",
-        result: result
+        success: true,
+        operation: op,
+        inputs: { a, b },
+        result
     });
 });
-
-app.get('/subtract', (req, res) => {
-    const { a, b } = req.query;
-
-    const result = subtract(Number(a), Number(b));
-
-    res.json({
-        operation: "subtraction",
-        result: result
-    });
-});
-
-app.get('/multiply', (req, res) => {
-    const { a, b } = req.query;
-
-    const result = multiply(Number(a), Number(b));
-
-    res.json({
-        operation: "multiplication",
-        result: result
-    });
-});
-
-app.get('/divide', (req, res) => {
-    const { a, b } = req.query;
-
-    const result = divide(Number(a), Number(b));
-
-    res.json({
-        operation: "division",
-        result: result
-    });
-});
-
 
 const PORT = process.env.PORT || 8080;
 
