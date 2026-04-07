@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
 
+app.use(express.static('public'));
+
 const cors = require('cors');
 app.use(cors());
 
@@ -88,10 +90,6 @@ app.get('/calculate', (req, res) => {
 });
 
 const PORT = process.env.PORT || 8080;
-
-app.get('/', (req, res) => {
-    res.send('Calculator API is running');
-});
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
