@@ -1,0 +1,251 @@
+{
+  "info": {
+    "_postman_id": "9ac31ac8-a12f-4cf0-9ae7-7ee7e3bc8e72",
+    "name": "Calculator API",
+    "description": "A simple RESTful API that performs basic arithmetic operations including:\n\n- Addition\n    \n- Subtraction\n    \n- Multiplication\n    \n- Division\n    \n- Square root\n    \n- Power\n    \n- Modulus\n    \n- It accepts query parameters for inputs and returns calculated results in JSON format\n    \n- Designed as a foundational backend project demosntarting API routing, request handling and integration with a frontend interface",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52437339",
+    "_collection_link": "https://go.postman.co/collection/52437339-9ac31ac8-a12f-4cf0-9ae7-7ee7e3bc8e72?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Addition Operation",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/calculate?op=add&a=10&b=5",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "calculate"
+          ],
+          "query": [
+            {
+              "key": "op",
+              "value": "add"
+            },
+            {
+              "key": "a",
+              "value": "10"
+            },
+            {
+              "key": "b",
+              "value": "5"
+            }
+          ]
+        },
+        "description": "Returns the result of adding 'a' and 'b' together\n\n- Both 'a' and 'b' are required for an output"
+      },
+      "response": []
+    },
+    {
+      "name": "Subtraction Operation",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/calculate?op=sub&a=10&b=5",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "calculate"
+          ],
+          "query": [
+            {
+              "key": "op",
+              "value": "sub"
+            },
+            {
+              "key": "a",
+              "value": "10"
+            },
+            {
+              "key": "b",
+              "value": "5"
+            }
+          ]
+        },
+        "description": "Returns the result of subtracting 'b' from 'a'\n\n- Both 'a' and 'b' are required for an output"
+      },
+      "response": []
+    },
+    {
+      "name": "Multiplication operation",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/calculate?op=mul&a=10&b=5",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "calculate"
+          ],
+          "query": [
+            {
+              "key": "op",
+              "value": "mul"
+            },
+            {
+              "key": "a",
+              "value": "10"
+            },
+            {
+              "key": "b",
+              "value": "5"
+            }
+          ]
+        },
+        "description": "Returns the result of multiplying 'a' and 'b' together\n\n- Both 'a' and 'b' are required for an output"
+      },
+      "response": []
+    },
+    {
+      "name": "Division Operation",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/calculate?op=div&a=10&b=5",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "calculate"
+          ],
+          "query": [
+            {
+              "key": "op",
+              "value": "div"
+            },
+            {
+              "key": "a",
+              "value": "10"
+            },
+            {
+              "key": "b",
+              "value": "5"
+            }
+          ]
+        },
+        "description": "Returns the result of dividing 'a' by 'b'\n\n- Both 'a' and 'b' are required for an output"
+      },
+      "response": []
+    },
+    {
+      "name": "Square Root Operation",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/calculate?op=sqrt&a=25",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "calculate"
+          ],
+          "query": [
+            {
+              "key": "op",
+              "value": "sqrt"
+            },
+            {
+              "key": "b",
+              "value": "3",
+              "disabled": true
+            },
+            {
+              "key": "a",
+              "value": "25"
+            }
+          ]
+        },
+        "description": "Returns the square root of 'a'\n\n- Only 'a' is required for an output"
+      },
+      "response": []
+    },
+    {
+      "name": "Power Operation",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/calculate?op=pow&a=2&b=5",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "calculate"
+          ],
+          "query": [
+            {
+              "key": "op",
+              "value": "pow"
+            },
+            {
+              "key": "a",
+              "value": "2"
+            },
+            {
+              "key": "b",
+              "value": "5"
+            }
+          ]
+        },
+        "description": "Returns the result of 'a' to the power of 'b'\n\n- Both 'a' and 'b' are required for an output"
+      },
+      "response": []
+    },
+    {
+      "name": "Modulus Operation",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/calculate?op=mod&a=9&b=2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "calculate"
+          ],
+          "query": [
+            {
+              "key": "op",
+              "value": "mod"
+            },
+            {
+              "key": "a",
+              "value": "9"
+            },
+            {
+              "key": "b",
+              "value": "2"
+            }
+          ]
+        },
+        "description": "Returns the remainder after dividing 'a' by 'b'\n\n- Both 'a' and 'b' are required for an output"
+      },
+      "response": []
+    }
+  ]
+}
